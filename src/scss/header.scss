@@ -16,6 +16,10 @@
 		align-items: center;
 		max-width: 520px;
 
+		@media (max-width:$mobileSmall) {
+			max-width: 320px;
+		}
+
 		img {
 			width: 100%;
 
@@ -33,6 +37,10 @@
 			@media (max-width:$mobile) {
 				display: none;
 			}
+
+			@media (max-width:$mobileSmall) {
+				display: block;
+			}
 		}
 	}
 
@@ -45,10 +53,6 @@
 		@media (max-width: em(1286)) {
 			display: none;
 		}
-
-		@media (max-width:$mobileSmall) {
-			display: block;
-		}
 	}
 
 	&__top-actions-text {
@@ -56,10 +60,18 @@
 		font-size: 15px;
 		line-height: math.div(18, 15);
 		margin-right: 15px;
+
+		@media (max-width:$mobileSmall) {
+			margin-right: 0;
+		}
 	}
 
 	&__top-actions-icons {
 		display: flex;
+
+		@media (max-width:$mobileSmall) {
+			margin-top: 10px;
+		}
 
 		img {
 			margin-right: 20px;
@@ -85,7 +97,11 @@
 		}
 
 		@media (max-width:$mobileSmall) {
-			display: block;
+			display: flex;
+			max-width: none;
+			text-align: center;
+			margin: 25px 0;
+			margin-bottom: 60px;
 		}
 	}
 
@@ -98,6 +114,10 @@
 	&__top-btn {
 		@media (max-width:em(971)) {
 			display: none;
+		}
+
+		@media (max-width:$mobileSmall) {
+			display: block;
 		}
 	}
 
@@ -125,6 +145,7 @@
 			left: -100%;
 			overflow: auto;
 			background: rgba(255, 255, 255, 1);
+			box-shadow: none;
 			padding: 40px 20px;
 			z-index: 4;
 			transition: all 0.3s ease 0s;
@@ -170,7 +191,7 @@
 		transition: all 0.3s ease 0s;
 
 		@media (max-width:$mobile) {
-			font-size: 20px;
+			font-size: 22px;
 		}
 
 		&:hover {

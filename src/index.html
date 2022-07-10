@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"Остекление квартир и домов под ключ в Алматы"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="main">
+				<div class="main__container">
+					<div class="main__body">
+						<h1 class="main__title">Остекление квартир и домов под ключ <br>
+							<span>в Алматы</span></h1>
+						<h3 class="main__subtitle">Мы предоставляем полный комплекс услуг по установке пластиковых окон,
+							алюминиевых конструкций, остеклению балконов в городе Алматы и области.</h3>
+						<div class="main__body-item main__item">
+							<div class="main__item-list">
+								<div class="main__item-list-title">Стоимость работ фиксируется</div>
+								<div class="main__item-list-text">в договоре и не изменяется до окончания работ</div>
+							</div>
+							<div class="main__item-list">
+								<div class="main__item-list-title">Установка по ГОСТ точно в срок</div>
+								<div class="main__item-list-text">никаких задержек и непредвиденных обстоятельств</div>
+							</div>
+						</div>
+						<div class="main__body-offer">Оставьте заявку и <strong> узнайте стоимость остекления</strong> Вашего
+							объекта</div>
+						<div class="main__body-form">
+							<input class="input" type="tel" name="tel" id="tel" placeholder="+7 (777) 777-77-77">
+							<button type="submit" class="button main__body-form-btn">Узнать стоимость</button>
+						</div>
+					</div>
+				</div>
+				<img src="@img/bg_main.png" alt="bg" class="main__bg">
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
