@@ -684,17 +684,34 @@
 
 .balcony {
 	position: relative;
-	@include adaptiveValue("margin-top", 80, 40);
+	@include adaptiveValue("margin-top", 300, 40);
+	@include adaptiveValue("margin-bottom", 120, 40);
 
-	&__bg {
+	&::before {
+		content: '';
 		position: absolute;
-		width: 100%;
+		width: 60%;
 		height: 100%;
-		top: 0;
-		left: 0;
+		bottom: -250px;
+		left: -20px;
+		background: url(../img/foresst-1.png) left bottom no-repeat;
 
-		img {
-			width: 100%;
+		@media (max-width:$tablet) {
+			left: -250px;
+		}
+	}
+
+	&::after {
+		content: '';
+		background: url(../img/foresst-2.png) center center no-repeat;
+		position: absolute;
+		width: 340px;
+		height: 626px;
+		top: -400px;
+		right: -70px;
+
+		@media (max-width:$mobile) {
+			display: none;
 		}
 	}
 
@@ -707,16 +724,46 @@
 		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.16);
 		border-radius: 20px;
 		padding: 50px 36px;
+
+		@media (max-width:$mobile) {
+			padding: 20px;
+		}
 	}
 
 	&__img {
-		width: 40%;
+		max-width: 40%;
 		z-index: 1;
+		margin: auto;
+
+		@media (max-width:$tablet) {
+			max-width: 100%;
+			display: block;
+			margin: auto;
+		}
+
+		img {
+			width: 100%;
+
+			@media (max-width:$tablet) {
+				max-width: 100%;
+				display: block;
+				margin: auto;
+			}
+		}
 	}
 
 	&__text {
 		position: relative;
-		margin-right: -110px;
+		left: -110px;
+
+		@media (max-width: em(1358)) {
+			left: 0;
+			z-index: 5;
+		}
+
+		@media (max-width:$mobile) {
+			margin-right: 0;
+		}
 
 		&::after {
 			content: '';
@@ -726,6 +773,10 @@
 			height: 411px;
 			top: 230px;
 			right: -110px;
+
+			@media (max-width:$mobile) {
+				display: none;
+			}
 		}
 
 	}
@@ -742,6 +793,10 @@
 		@include adaptiveValue("font-size", 20, 16);
 		line-height: math.div(24, 20);
 		padding: 70px 90px;
+
+		@media (max-width:$mobile) {
+			padding: 30px;
+		}
 
 		&::before {
 			content: '';
@@ -761,6 +816,121 @@
 			margin-bottom: 20px;
 			display: block;
 			position: relative;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// repair ========================================================================================================================================================
+.repair {
+	position: relative;
+	@include adaptiveValue("margin-top", 300, 40);
+	@include adaptiveValue("margin-bottom", 80, 40);
+	z-index: 2;
+	padding: 80px 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background: url(../img/bg-repair.jpg) center/cover no-repeat;
+	}
+
+	&__body {
+		z-index: 2;
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	&__form {
+		flex: 0 1 40%;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width:$tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__form-input {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		border-bottom: 1px solid #FFFFFF;
+		border-radius: 0;
+		max-width: 320px;
+		padding: 0 0 10px 0;
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	::placeholder {
+		color: #FFFFFF;
+		font-weight: 700;
+		font-size: 20px;
+	}
+
+	&__form-button {
+		background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
+		box-shadow: 0px 7px 35px rgba(238, 141, 17, 0.54);
+		border-radius: 20px;
+		max-width: 265px;
+		padding: 25px;
+		font-weight: 700;
+		font-size: 18px;
+		letter-spacing: 1px;
+		color: #FFFFFF;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__right {
+		flex: 0 1 40%;
+		background: rgba(255, 255, 255, 0.77);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
+		padding: 45px 100px;
+		min-width: 750px;
+
+		@media (max-width:1273px) {
+			margin-top: 30px;
+			min-width: 100%;
+			padding: 30px;
+		}
+	}
+
+	&__right-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 26);
+		color: #EE8D11;
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__right-text {
+		font-weight: 400;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: math.div(24, 20);
+
+		span {
+			display: block;
+			margin-bottom: 20px;
 
 			&:last-child {
 				margin-bottom: 0;
