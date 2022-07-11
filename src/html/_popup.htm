@@ -5,17 +5,19 @@
 			<div class="popup__text">
 				Оставьте заявку прямо сейчас
 			</div>
-			<div class="form-box">
-				<label for="name" class="popup__name">Введите ваше имя*</label>
-				<input autocomplete="off" type="name" name="form[]" data-error="Ошибка" placeholder="Серикбек"
-					class="input">
-			</div>
-			<div class="form-box">
-				<label for="tel" class="popup__name">Введите ваш телефон*</label>
-				<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" class="input"
-					placeholder="7 000 000 00 00">
-			</div>
-			<button type="submit" class="form-button button">Отправить</button>
+			<form data-message="send" data-ajax="true" action="telegram.php" method="POST" class="form">
+				<div class="form-box">
+					<label for="name" name="name" class="popup__name">Введите ваше имя*</label>
+					<input autocomplete="off" type="name" name="name" data-error="Ошибка" placeholder="Серикбек"
+						class="input" data-required="text">
+				</div>
+				<div class="form-box">
+					<label for="tel" name="tel" class="popup__name">Введите ваш телефон*</label>
+					<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" class="input tel"
+						placeholder="7 000 000 00 00" data-required="tel">
+				</div>
+				<button type="submit" class="form-button button">Отправить</button>
+			</form>
 		</div>
 	</div>
 </div>
