@@ -333,11 +333,25 @@
 	}
 
 	&__body-img {
+		position: relative;
 		max-width: 320px;
 		height: 240px;
 		display: block;
 		margin: auto;
 		margin-bottom: 30px;
+
+		&-bage {
+
+			&::before {
+				content: '';
+				background: url(../img/bage.png) no-repeat;
+				position: absolute;
+				width: 78px;
+				height: 78px;
+				bottom: 0px;
+				right: -18px;
+			}
+		}
 
 		img {
 			// width: 100%;
