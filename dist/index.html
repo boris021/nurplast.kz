@@ -26,15 +26,15 @@
 					<div data-da=".menu__body, 480, 3" class="header__top-actions">
 						<div class="header__top-actions-text">Свяжитесь с нами напрямую:</div>
 						<div class="header__top-actions-icons">
-							<img src="img/whatsapp.png" alt="whatsapp">
-							<img src="img/telegram.png" alt="telegram">
+							<a href="https://api.whatsapp.com/send?phone=77085267630"><img src="img/whatsapp.png" alt="whatsapp"></a>
+							<a href="https://t.me/nurplastkz"><img src="img/telegram.png" alt="telegram"></a>
 						</div>
 					</div>
 					<div data-da=".menu__body, 480, 2" class="header__top-phone">
 						<a href="tel:+77085267630" class="">+7 (708) 526 76 30</a>
 						<span class="header__top-clock">Пн-Пт 09.00-17.00</span>
 					</div>
-					<a data-da=".menu__body, 480, 6" href="" class="btn header__top-btn">Заказать звонок</a>
+					<a data-da=".menu__body, 480, 6" href="#" data-popup="#popup" class="btn header__top-btn">Заказать звонок</a>
 				</div>
 
 			</div>
@@ -45,13 +45,13 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="" class="menu__link">Главная</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Преимущества</a></li>
-							<li class="menu__item"><a href="" class="menu__link">О компании</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Пластиковые окна</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Алюминиевые изделия</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Балконы</a></li>
-							<li class="menu__item"><a href="" class="menu__link">Ремонт окон</a></li>
+							<li class="menu__item"><a href="" data-goto=".main" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a href="" data-goto=".glass" class="menu__link">Преимущества</a></li>
+							<li class="menu__item"><a href="" data-goto=".advantage" class="menu__link">О компании</a></li>
+							<li class="menu__item"><a href="" data-goto=".production" class="menu__link">Пластиковые окна</a></li>
+							<li class="menu__item"><a href="" data-goto=".aluminum" class="menu__link">Алюминиевые изделия</a></li>
+							<li class="menu__item"><a href="" data-goto=".balcony" class="menu__link">Балконы</a></li>
+							<li class="menu__item"><a href="" data-goto=".repair" class="menu__link">Ремонт окон</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -621,10 +621,10 @@
 							<a href="" class="map__body-social-icon">
 								<img src="img/insta.png" alt="insta">
 							</a>
-							<a href="" class="map__body-social-icon">
+							<a href="https://api.whatsapp.com/send?phone=77085267630" class="map__body-social-icon">
 								<img src="img/whatsapp.png" alt="whatsapp">
 							</a>
-							<a href="" class="map__body-social-icon">
+							<a href="https://t.me/nurplastkz" class="map__body-social-icon">
 								<img src="img/telegram.png" alt="telegram">
 							</a>
 						</div>
@@ -641,18 +641,18 @@
 			</div>
 		</footer>
 	</div>
-	<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрыть</button>
+				<div class="popup__text">
+					Оставить заявку
+				</div>
+				<input autocomplete="off" type="name" name="form[]" data-error="Ошибка" placeholder="" class="input" placeholder="Введите ваше имя">
+				<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="" class="input" placeholder="Введите ваш телефон">
 			</div>
 		</div>
 	</div>
-</div>
- -->
-
 	<script src="js/app.min.js"></script>
 </body>
 

@@ -494,10 +494,10 @@ body::after {
     margin-top: 10px;
   }
 }
-.header__top-actions-icons img {
+.header__top-actions-icons a {
   margin-right: 20px;
 }
-.header__top-actions-icons img:last-child {
+.header__top-actions-icons a:last-child {
   margin-right: 0;
 }
 .header__top-phone {
