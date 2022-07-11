@@ -1,14 +1,21 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
+			<button data-close type="button" class="popup__close">X</button>
 			<div class="popup__text">
-				Оставить заявку
+				Оставьте заявку прямо сейчас
 			</div>
-			<input autocomplete="off" type="name" name="form[]" data-error="Ошибка" placeholder="" class="input"
-				placeholder="Введите ваше имя">
-			<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="" class="input"
-				placeholder="Введите ваш телефон">
+			<div class="form-box">
+				<label for="name" class="popup__name">Введите ваше имя*</label>
+				<input autocomplete="off" type="name" name="form[]" data-error="Ошибка" placeholder="Серикбек"
+					class="input">
+			</div>
+			<div class="form-box">
+				<label for="tel" class="popup__name">Введите ваш телефон*</label>
+				<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" class="input"
+					placeholder="7 000 000 00 00">
+			</div>
+			<button type="submit" class="form-button button">Отправить</button>
 		</div>
 	</div>
 </div>

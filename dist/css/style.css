@@ -253,13 +253,69 @@ body::after {
   transform: scale(0);
   transition: transform 0.3s ease 0s;
   background-color: #eee;
-  padding: 20px;
+  padding: 40px;
   width: 100%;
   max-width: 900px;
   border-radius: 20px;
 }
 .lock .popup__content {
   visibility: visible;
+}
+
+.popup__text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media (min-width: 91.875em) {
+  .popup__text {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 91.875em) {
+  @supports (font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem )) {
+    .popup__text {
+      font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem )) {
+    .popup__text {
+      font-size: calc(1.625rem + 0.25 * (100vw - 20rem) / 71.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .popup__text {
+    font-size: 1.625rem;
+  }
+}
+.popup__name {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.popup ::placeholder {
+  font-size: 14px;
+  color: rgba(51, 51, 51, 0.342);
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.form-box:last-child {
+  margin-bottom: 0;
+}
+
+.form-button {
+  background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
+  box-shadow: 0px 7px 35px rgba(238, 141, 17, 0.54);
+  border-radius: 20px;
+  padding: 25px 60px;
+  transition: all 0.3s ease 0s;
+}
+.form-button:hover {
+  opacity: 0.8;
 }
 
 .tabs {
@@ -852,7 +908,16 @@ body::after {
   line-height: 1.1764705882;
   margin-bottom: 20px;
 }
+.main__body-form-input {
+  margin-right: 25px;
+}
+@media (max-width: 47.99875em) {
+  .main__body-form-input {
+    margin-right: 0;
+  }
+}
 .main__body-form-btn {
+  margin-left: 35;
   background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
   box-shadow: 0px 7px 35px rgba(238, 141, 17, 0.54);
   border-radius: 20px;
@@ -862,7 +927,6 @@ body::after {
   color: white;
   font-family: "FuturaMediumC";
   letter-spacing: 1px;
-  margin-left: 35;
   transition: all 0.3s ease 0s;
 }
 @media (max-width: 61.99875em) {

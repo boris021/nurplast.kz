@@ -107,7 +107,16 @@
 
 	&__body-form {
 
+		&-input {
+			margin-right: 25px;
+
+			@media (max-width:$mobile) {
+				margin-right: 0;
+			}
+		}
+
 		&-btn {
+			margin-left: 35;
 			background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
 			box-shadow: 0px 7px 35px rgba(238, 141, 17, 0.54);
 			border-radius: 20px;
@@ -117,7 +126,6 @@
 			color: white;
 			font-family: "FuturaMediumC";
 			letter-spacing: 1px;
-			margin-left: 35;
 			transition: all 0.3s ease 0s;
 
 			@media (max-width:$tablet) {
