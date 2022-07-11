@@ -862,29 +862,8 @@ body::after {
   color: white;
   font-family: "FuturaMediumC";
   letter-spacing: 1px;
+  margin-left: 35;
   transition: all 0.3s ease 0s;
-}
-@media (min-width: 91.875em) {
-  .main__body-form-btn {
-    margin-left: 2.1875rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 91.875em) {
-  @supports (margin-left: clamp( 0.9375rem , 0.589673913rem  +  1.7391304348vw , 2.1875rem )) {
-    .main__body-form-btn {
-      margin-left: clamp( 0.9375rem , 0.589673913rem  +  1.7391304348vw , 2.1875rem );
-    }
-  }
-  @supports not (margin-left: clamp( 0.9375rem , 0.589673913rem  +  1.7391304348vw , 2.1875rem )) {
-    .main__body-form-btn {
-      margin-left: calc(0.9375rem + 1.25 * (100vw - 20rem) / 71.875);
-    }
-  }
-}
-@media (max-width: 20em) {
-  .main__body-form-btn {
-    margin-left: 0.9375rem;
-  }
 }
 @media (max-width: 61.99875em) {
   .main__body-form-btn {
@@ -1202,6 +1181,9 @@ body::after {
   top: 0;
   left: 0;
   z-index: -1;
+}
+.production__bg img {
+  width: 100%;
 }
 .production__offer {
   background: #FFFFFF;
@@ -1541,12 +1523,23 @@ body::after {
   position: absolute;
   width: 626px;
   height: 824px;
-  top: -227px;
+  top: -248px;
   right: 0;
+}
+@media (max-width: 61.99875em) {
+  .claim::before {
+    display: none;
+  }
 }
 .claim__body {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 61.99875em) {
+  .claim__body {
+    justify-content: center;
+  }
 }
 .claim__form {
   margin-top: -87px;
@@ -1556,9 +1549,14 @@ body::after {
   border: 1px solid #FE8615;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
   border-radius: 20px;
-  max-width: 500px;
+  min-width: 500px;
   padding: 75px 60px;
   text-align: center;
+}
+@media (max-width: 61.99875em) {
+  .claim__form {
+    margin: 0 20px;
+  }
 }
 .claim__form-title {
   font-weight: 700;
@@ -1657,6 +1655,12 @@ body::after {
   z-index: 2;
   margin-left: 50px;
 }
+@media (max-width: 61.99875em) {
+  .claim__right {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
 .claim__right-item {
   display: flex;
   align-items: center;
@@ -1682,6 +1686,163 @@ body::after {
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.balcony {
+  position: relative;
+}
+@media (min-width: 91.875em) {
+  .balcony {
+    margin-top: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 91.875em) {
+  @supports (margin-top: clamp( 2.5rem , 1.8043478261rem  +  3.4782608696vw , 5rem )) {
+    .balcony {
+      margin-top: clamp( 2.5rem , 1.8043478261rem  +  3.4782608696vw , 5rem );
+    }
+  }
+  @supports not (margin-top: clamp( 2.5rem , 1.8043478261rem  +  3.4782608696vw , 5rem )) {
+    .balcony {
+      margin-top: calc(2.5rem + 2.5 * (100vw - 20rem) / 71.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .balcony {
+    margin-top: 2.5rem;
+  }
+}
+.balcony__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.balcony__bg img {
+  width: 100%;
+}
+.balcony__body {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  padding: 50px 36px;
+}
+.balcony__img {
+  width: 40%;
+  z-index: 1;
+}
+.balcony__text {
+  position: relative;
+  margin-right: -110px;
+}
+.balcony__text::after {
+  content: "";
+  background: url(../img/ruchka.png) center center no-repeat;
+  position: absolute;
+  width: 255px;
+  height: 411px;
+  top: 230px;
+  right: -110px;
+}
+.balcony__text-title {
+  font-weight: 700;
+}
+@media (min-width: 91.875em) {
+  .balcony__text-title {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 91.875em) {
+  @supports (font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem )) {
+    .balcony__text-title {
+      font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem );
+    }
+  }
+  @supports not (font-size: clamp( 1.625rem , 1.5554347826rem  +  0.347826087vw , 1.875rem )) {
+    .balcony__text-title {
+      font-size: calc(1.625rem + 0.25 * (100vw - 20rem) / 71.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .balcony__text-title {
+    font-size: 1.625rem;
+  }
+}
+@media (min-width: 91.875em) {
+  .balcony__text-title {
+    margin-bottom: 3.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 91.875em) {
+  @supports (margin-bottom: clamp( 1.875rem , 1.3532608696rem  +  2.6086956522vw , 3.75rem )) {
+    .balcony__text-title {
+      margin-bottom: clamp( 1.875rem , 1.3532608696rem  +  2.6086956522vw , 3.75rem );
+    }
+  }
+  @supports not (margin-bottom: clamp( 1.875rem , 1.3532608696rem  +  2.6086956522vw , 3.75rem )) {
+    .balcony__text-title {
+      margin-bottom: calc(1.875rem + 1.875 * (100vw - 20rem) / 71.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .balcony__text-title {
+    margin-bottom: 1.875rem;
+  }
+}
+.balcony__text-description {
+  position: relative;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 70px 90px;
+}
+@media (min-width: 91.875em) {
+  .balcony__text-description {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 91.875em) {
+  @supports (font-size: clamp( 1rem , 0.9304347826rem  +  0.347826087vw , 1.25rem )) {
+    .balcony__text-description {
+      font-size: clamp( 1rem , 0.9304347826rem  +  0.347826087vw , 1.25rem );
+    }
+  }
+  @supports not (font-size: clamp( 1rem , 0.9304347826rem  +  0.347826087vw , 1.25rem )) {
+    .balcony__text-description {
+      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 71.875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .balcony__text-description {
+    font-size: 1rem;
+  }
+}
+.balcony__text-description::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(238, 141, 17, 0.43);
+  border-radius: 20px;
+}
+.balcony__text-description span {
+  max-width: 574px;
+  margin-bottom: 20px;
+  display: block;
+  position: relative;
+}
+.balcony__text-description span:last-child {
+  margin-bottom: 0;
 }
 .swiper {
   overflow: hidden;

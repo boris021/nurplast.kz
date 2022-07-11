@@ -117,7 +117,7 @@
 			color: white;
 			font-family: "FuturaMediumC";
 			letter-spacing: 1px;
-			@include adaptiveValue("margin-left", 35, 15);
+			margin-left: 35;
 			transition: all 0.3s ease 0s;
 
 			@media (max-width:$tablet) {
@@ -295,6 +295,10 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	&__offer {
@@ -541,13 +545,22 @@
 		position: absolute;
 		width: 626px;
 		height: 824px;
-		top: -227px;
+		top: -248px;
 		right: 0;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
 	}
 
 	&__body {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
+
+		@media (max-width:$tablet) {
+			justify-content: center;
+		}
 	}
 
 	&__form {
@@ -558,9 +571,13 @@
 		border: 1px solid #FE8615;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
 		border-radius: 20px;
-		max-width: 500px;
+		min-width: 500px;
 		padding: 75px 60px;
 		text-align: center;
+
+		@media (max-width:$tablet) {
+			margin: 0 20px;
+		}
 	}
 
 	&__form-title {
@@ -578,8 +595,6 @@
 		max-width: 300px;
 		margin: auto;
 	}
-
-	&__form-box {}
 
 	&__form-name {
 		font-weight: 700;
@@ -626,6 +641,11 @@
 	&__right {
 		z-index: 2;
 		margin-left: 50px;
+
+		@media (max-width:$tablet) {
+			margin-left: 0;
+			margin-top: 40px;
+		}
 	}
 
 	&__right-item {
@@ -657,5 +677,94 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
+	}
+}
+
+// balcony ========================================================================================================================================================
+
+.balcony {
+	position: relative;
+	@include adaptiveValue("margin-top", 80, 40);
+
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		background: #FFFFFF;
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.16);
+		border-radius: 20px;
+		padding: 50px 36px;
+	}
+
+	&__img {
+		width: 40%;
+		z-index: 1;
+	}
+
+	&__text {
+		position: relative;
+		margin-right: -110px;
+
+		&::after {
+			content: '';
+			background: url(../img/ruchka.png) center center no-repeat;
+			position: absolute;
+			width: 255px;
+			height: 411px;
+			top: 230px;
+			right: -110px;
+		}
+
+	}
+
+	&__text-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 26);
+		@include adaptiveValue("margin-bottom", 60, 30);
+	}
+
+	&__text-description {
+		position: relative;
+		font-weight: 400;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: math.div(24, 20);
+		padding: 70px 90px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 300%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			// z-index: -1;
+			background: rgba(238, 141, 17, 0.43);
+			border-radius: 20px;
+		}
+
+
+		span {
+			max-width: 574px;
+			margin-bottom: 20px;
+			display: block;
+			position: relative;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
