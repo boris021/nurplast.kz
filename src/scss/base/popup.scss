@@ -69,12 +69,6 @@ body::after {
 
 .popup {
 
-	&__wrapper {}
-
-	&__content {}
-
-	&__close {}
-
 	&__text {
 		@include adaptiveValue("font-size", 30, 26);
 		text-align: center;
@@ -98,12 +92,14 @@ body::after {
 	justify-content: center;
 	margin-bottom: 30px;
 
+	@media (max-width:$tablet) {
+		margin-bottom: 15px;
+	}
+
 	&:last-child {
 		margin-bottom: 0;
 	}
 }
-
-.input {}
 
 .form-button {
 	background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
@@ -111,8 +107,37 @@ body::after {
 	border-radius: 20px;
 	padding: 25px 60px;
 	transition: all 0.3s ease 0s;
+	color: #fff;
 
 	&:hover {
 		opacity: 0.8;
 	}
+}
+
+//========================================================================================================================================================
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&_social {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__send {
+		@include adaptiveValue("font-size", 30, 26);
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	&__send-text {
+		@include adaptiveValue("font-size", 26, 20);
+		text-align: center;
+		margin-bottom: 30px;
+	}
+}
+
+.link-soc {
+	margin-right: 40px;
 }

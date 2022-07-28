@@ -880,6 +880,8 @@
 		max-width: 320px;
 		padding: 0 0 10px 0;
 		margin-bottom: 40px;
+		color: #FFFFFF;
+		font-size: 18px;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -891,6 +893,8 @@
 		font-weight: 700;
 		font-size: 20px;
 	}
+
+
 
 	&__form-button {
 		background: linear-gradient(102.4deg, #EE8D11 36.84%, #F3AD44 74.32%);
@@ -964,8 +968,6 @@
 
 	&__body {
 		position: relative;
-		display: flex;
-		align-items: center;
 		gap: 30px;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -988,7 +990,24 @@
 			z-index: -1;
 		}
 	}
+
+	&__slide {
+		justify-content: center;
+	}
 }
+
+.swiper-backface-hidden .swiper-slide {
+	text-align: center;
+}
+
+.swiper-slide {
+
+	img {
+		width: 274px;
+		max-height: 552px;
+	}
+}
+
 
 // map ========================================================================================================================================================
 .map {
@@ -1008,6 +1027,10 @@
 		font-weight: 500;
 		font-size: 18px;
 		font-family: "FuturaDemiC";
+
+		@media (max-width:$mobile) {
+			padding: 25px 50px;
+		}
 	}
 
 	&__body-adress {
@@ -1081,4 +1104,10 @@
 	height: 100%;
 	top: 0;
 	left: 0;
+}
+
+.swiper-autoheight,
+.swiper-autoheight .swiper-slide {
+	height: auto;
+	overflow: hidden;
 }

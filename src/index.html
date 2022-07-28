@@ -28,10 +28,15 @@
 						</div>
 						<div class="main__body-offer">Оставьте заявку и <strong> узнайте стоимость остекления</strong> Вашего
 							объекта</div>
+
 						<div class="main__body-form">
-							<input class="main__body-form-input input" type="tel" name="tel" id="tel"
-								placeholder="+7 (777) 777-77-77">
-							<button type="submit" class="button main__body-form-btn">Узнать стоимость</button>
+							<form data-popup-message="#message" data-ajax="true" action="telegram.php" method="POST"
+								class="form">
+								<input class="main__body-form-input input tel" type="tel"
+									data-error="Вы не ввели номер телефона" name="tel" id="tel" placeholder="+7 (777) 777-77-77"
+									data-required="tel">
+								<button type="submit" class="button main__body-form-btn">Узнать стоимость</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -133,13 +138,14 @@
 					<div class="production__offer">Наша компания производит и устанавливает пластиковые окна в Алматы более
 						10-лет.</div>
 					<div class="production__offer">Мы работаем только с качественными комплектующими известных мировых
-						производителей: WDA, Deceunink, Winhouse</div>
+						производителей: Rehau-Германия, Deceunink, Winhouse</div>
 					<div data-tabs class="tabs">
 						<nav data-tabs-titles class="tabs__navigation">
-							<button type="button" class="tabs__title _tab-active">Winhouse <span>Немецкая противовзломная
+							<button type="button" class="tabs__title _tab-active">WDS <span>Немецкая противовзломная
 									фурнитура</span></button>
 							<button type="button" class="tabs__title">Deceunink <span>Бельгийский профиль</span></button>
-							<button type="button" class="tabs__title">WDA <span>Европейский профиль</span></button> </nav>
+							<button type="button" class="tabs__title">Rehau-Германия <span>Европейский профиль</span></button>
+						</nav>
 						<div data-tabs-body class="tabs__content">
 							<div class="tabs__body">
 								<div class="tabs__body-item">
@@ -151,7 +157,7 @@
 									<div class="tabs__body-img">
 										<img src="@img/window-prices-img-1.png" alt="window-prices-img-1">
 									</div>
-									<span>Стеклопакет: 32 мм</span>
+									<span>Стеклопакет: 24 мм</span>
 									<span>Профиль: 3 камеры, 60 мм</span>
 									<a href="#" data-popup="#popup" class="tabs__body-btn btn">Узнать стоимость</a>
 								</div>
@@ -422,7 +428,6 @@
 									</div>
 								</div>
 							</div>
-
 						</div>
 						<!-- Если нужна пагинация -->
 						<div class="swiper-pagination"></div>
@@ -442,16 +447,19 @@
 						<div class="claim__form">
 							<div class="claim__form-title">Заполните короткую форму</div>
 							<div class="claim__form-subtitle">чтобы пригласить замерщика в любое удобное для вас время</div>
-							<form action="" method="post">
+							<form data-popup-message="#message" data-ajax="true" action="telegram.php" method="POST"
+								class="form">
 								<div class="claim__form-box">
-									<lable class="claim__form-name">Имя</lable>
-									<input type="name" class="claim__form-input">
+									<lable for="name" name="name" class="claim__form-name">Имя</lable>
+									<input type="text" name="name" class="claim__form-input input"
+										data-error="Вы не ввели ваше имя" data-required="text">
 								</div>
 								<div class="claim__form-box">
 									<lable class="claim__form-tel">Телефон</lable>
-									<input type="tel" class="claim__form-input">
+									<input for="tel" type="tel" name="tel" class="claim__form-input input tel"
+										data-error="Вы не ввели номер телефона" data-required="tel">
 								</div>
-								<button type="button" class="claim__form-btn">Вызвать замерщика</button>
+								<button type="submit" class="claim__form-btn button">Вызвать замерщика</button>
 							</form>
 						</div>
 						<div class="claim__right">
@@ -506,19 +514,17 @@
 						</div>
 					</div>
 				</div>
-				<!-- <div class="balcony__bg">
-					<img src="@img/bg-balkony.png" alt="balkony">
-				</div> -->
 			</section>
 
 			<section class="repair">
 				<div class="repair__container">
 					<div class="repair__body">
-						<form action="" class="repair__form">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше имя"
-								class="input repair__form-input">
-							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваш телефон"
-								class="input repair__form-input">
+						<form data-popup-message="#message" data-ajax="true" action="telegram.php" method="POST"
+							class="repair__form form">
+							<input type="text" name="name" data-error="Вы не ввели ваше имя" placeholder="Ваше имя"
+								class="input repair__form-input" data-required="text">
+							<input type="tel" name="tel" data-error="Вы не ввели номер телефона" placeholder="Ваш телефон"
+								class="input repair__form-input tel" data-required="tel">
 							<button type="submit" class="repair__form-button button">Узнать стоимость</button>
 						</form>
 						<div class="repair__right">
@@ -539,10 +545,25 @@
 				<div class="feedback__container">
 					<h2 class="feedback__title title">Отзывы <span>наших клиентов</span></h2>
 					<div class="feedback__body">
-						<img src="@img/phone.png" alt="feedback">
-						<img src="@img/phone.png" alt="feedback">
-						<img src="@img/phone.png" alt="feedback">
-						<img src="@img/phone.png" alt="feedback">
+						<!-- Оболочка слайдера -->
+						<div class="feedback__slider feedbackswiper">
+							<!-- Двигающееся часть слайдера -->
+							<div class="feedback__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="feedback__slide swiper-slide">
+									<img src="@img/feedback/w01.jpg" alt="feedback">
+								</div>
+								<!-- Слайд -->
+								<div class="feedback__slide swiper-slide">
+									<img src="@img/feedback/w02.jpg" alt="feedback">
+								</div>
+								<!-- Слайд -->
+								<div class="feedback__slide swiper-slide">
+									<img src="@img/feedback/w03.jpg" alt="feedback">
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</section>

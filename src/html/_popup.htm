@@ -5,19 +5,37 @@
 			<div class="popup__text">
 				Оставьте заявку прямо сейчас
 			</div>
-			<form data-message="send" data-ajax="true" action="telegram.php" method="POST" class="form">
+			<form data-ajax="true" data-popup-message="#message" action="telegram.php" method="POST" class="form">
 				<div class="form-box">
 					<label for="name" name="name" class="popup__name">Введите ваше имя*</label>
-					<input autocomplete="off" type="name" name="name" data-error="Ошибка" placeholder="Серикбек"
-						class="input" data-required="text">
+					<input type="name" name="name" data-error="Вы не ввели ваше имя" placeholder="Серикбек" class="input"
+						data-required="text">
 				</div>
 				<div class="form-box">
 					<label for="tel" name="tel" class="popup__name">Введите ваш телефон*</label>
-					<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" class="input tel"
+					<input type="tel" name="tel" data-error="Вы не ввели номер телефона" class="input tel"
 						placeholder="7 000 000 00 00" data-required="tel">
 				</div>
 				<button type="submit" class="form-button button">Отправить</button>
 			</form>
+		</div>
+	</div>
+</div>
+
+<div id="message" class="popup popup_send-message message">
+	<div class="popup__content">
+		<div class="popup__body">
+			<button data-close type="button" class="popup__close">X</button>
+			<div class="popup__send">Ваше сообщение отправлено!</div>
+			<div class="popup__send-text">Также вы можете написать нам в мессенджеры</div>
+			<div class="popup_social">
+				<button class="link-soc"> <a href="https://api.whatsapp.com/send?phone=77085267630">
+						<img src="@img/whatsapp.png" class="soc-itme" alt="whatsapp"></a>
+				</button>
+				<button class="link-soc telegram"> <a href="https://t.me/nurplastkz">
+						<img src="@img/telegram.png" class="soc-itme" alt="whatsapp"></a>
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
